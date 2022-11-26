@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand logo " href="#">Books</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addbook">Add Book</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="">Logout</a>
+        </li>
+     </ul>
+   
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+<div class="card-deck" >
+  
+   <div class="card col col-md-3 col-lg-4 " *ngFor="let item of data" >
+  
+     <div class="card-body " >
+      <h2 class="card-title text-center">{{item.bookname}}</h2>
+      <h5 class="card-title">{{item.authorname}}</h5>
+      <small>Published on:{{item.published}}</small>
+     
+      <p class="card-text">{{item.description}}</p>
+      <div class="card-footer row">
+        <a href="edit/{{item._id}}" class="btn btn-success col-6">Edit</a>
+        <button  class="col-6 btn btn-danger" (click)="deletebtn(item._id)" >Delete</button> 
+      </div> 
+   </div>
+    
+  </div> 
+  
+</div> 
+</div>
+</div>
